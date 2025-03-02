@@ -6,6 +6,7 @@ import "./App.css";
 import { Navigation } from "./components/navigation";
 import { IKContext } from "imagekitio-react";
 import { Services } from "./components/services";
+import { Location } from "./components/location";
 
 const IMAGEKIT_ENDPOINT =
   "https://ik.imagekit.io/2ljl3qha5/santa-adela/SantaAdela";
@@ -28,6 +29,7 @@ const App = () => {
         <Navigation />
         <Header />
         <Services />
+        <Location />
       </div>
     </IKContext>
   );

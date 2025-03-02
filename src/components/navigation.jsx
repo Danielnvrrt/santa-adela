@@ -8,7 +8,7 @@ export const Navigation = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["services", "pricing", "location", "contact"];
+      const sections = ["services", "location", "contact"];
       let currentSection = "";
 
       sections.forEach((section) => {
@@ -49,7 +49,6 @@ export const Navigation = () => {
         <ul className="hidden md:flex space-x-6 text-gray-700 font-medium">
           {[
             { id: "services", label: "SERVICIOS" },
-            { id: "pricing", label: "PRECIOS" },
             { id: "location", label: "DONDE ESTAMOS" },
             { id: "contact", label: "CONTACTO" },
           ].map(({ id, label }) => (
@@ -75,7 +74,6 @@ export const Navigation = () => {
         <ul className="md:hidden bg-white shadow-md rounded-lg mt-2 p-4 space-y-4">
           {[
             { id: "services", label: "SERVICIOS" },
-            { id: "pricing", label: "PRECIOS" },
             { id: "location", label: "DONDE ESTAMOS" },
             { id: "contact", label: "CONTACTO" },
           ].map(({ id, label }) => (

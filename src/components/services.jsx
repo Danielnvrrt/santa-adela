@@ -34,7 +34,10 @@ export const Services = () => {
   return (
     <section id="services" className="py-16 bg-gray-100">
       <div className="max-w-6xl mx-auto text-center px-6">
-        <h2 className="text-3xl font-bold text-gray-800 mb-8">SERVICIOS</h2>
+        <h2 className="text-3xl font-bold text-gray-800 mb-8 relative inline-block">
+          SERVICIOS
+          <span className="block w-18 h-0.5 bg-blue-500 absolute -bottom-1 left-10"></span>
+        </h2>
         <div className="grid md:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div
