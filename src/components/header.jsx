@@ -1,28 +1,28 @@
-import React from "react";
+import { IKImage } from "imagekitio-react";
 
-export const Header = (props) => {
+export const Header = () => {
   return (
-    <header id="header" className="relative bg-gray-900 text-white">
-      <div className="intro">
-        <div className="container mx-auto px-6 py-24 relative z-10">
-          <div className="flex justify-center">
-            <div className="text-center max-w-2xl">
-              <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
-                {props.data ? props.data.title : "Loading"}
-                <span className="block"></span>
-              </h1>
-              <p className="text-lg md:text-xl mb-8">
-                {props.data ? props.data.paragraph : "Loading"}
-              </p>
-              <a
-                href="#features"
-                className="btn bg-blue-500 text-white py-3 px-6 rounded-full text-lg font-semibold hover:bg-blue-600 transition"
-              >
-                Learn More
-              </a>
-            </div>
-          </div>
-        </div>
+    <header className="relative h-screen flex items-center justify-center text-white">
+      <IKImage
+        path="parking1.jpg"
+        className="absolute w-full h-full object-cover"
+        alt="Background"
+      />
+      <div className="absolute inset-0 bg-black/10"></div>
+      <div className="relative text-center px-6 md:px-12">
+        <h1 className="text-4xl md:text-5xl font-bold">
+          ALQUILER TRASTEROS Y <br></br>PLAZAS DE PARKING
+        </h1>
+        <p className="mt-4 text-lg md:text-xl max-w-2xl mx-auto">
+          Disponemos de trasteros y plazas de parking en calle Santa Adela,
+          Peligros, Granada. Seguridad, accesibilidad y comodidad a tu alcance.
+        </p>
+        <a
+          href="#services"
+          className="mt-6 inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg text-lg transition"
+        >
+          Más información
+        </a>
       </div>
     </header>
   );

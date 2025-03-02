@@ -5,12 +5,15 @@ import JsonData from "./data/data.json";
 import "./App.css";
 import { Navigation } from "./components/navigation";
 import { IKContext } from "imagekitio-react";
+import { Services } from "./components/services";
 
-const IMAGEKIT_ENDPOINT = "https://ik.imagekit.io/2ljl3qha5/santa-adela/SantaAdela";
+const IMAGEKIT_ENDPOINT =
+  "https://ik.imagekit.io/2ljl3qha5/santa-adela/SantaAdela";
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
   speedAsDuration: true,
+  header: "[data-scroll-header]",
 });
 
 const App = () => {
@@ -23,10 +26,8 @@ const App = () => {
     <IKContext urlEndpoint={IMAGEKIT_ENDPOINT}>
       <div>
         <Navigation />
-        <Header data={landingPageData.Header} />
-        <Header data={landingPageData.Header} />
-        <Header data={landingPageData.Header} />
-        <Header data={landingPageData.Header} />
+        <Header />
+        <Services />
       </div>
     </IKContext>
   );

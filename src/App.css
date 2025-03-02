@@ -19,3 +19,34 @@
     width: 110%;
   }
 }
+
+@theme {
+  --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
+  --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* Definir la animación en CSS */
+@keyframes underline {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Aplicar la animación como una utilidad */
+.underline-animation {
+  position: relative;
+}
+
+.underline-animation::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  height: 2px;
+  width: 0;
+  background-color: rgb(59, 130, 246); /* azul de Tailwind */
+  animation: underline 1s ease-out forwards;
+}
