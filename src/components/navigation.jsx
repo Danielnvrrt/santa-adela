@@ -1,71 +1,78 @@
-import React from "react";
+import { useState } from "react";
+import { Menu } from "lucide-react";
+import { IKImage } from "imagekitio-react";
 
 export const Navigation = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <nav id="menu" className="navbar-default fixed-top w-full z-50">
-      <div className="container mx-auto flex justify-between items-center px-6">
-        <div className="flex items-center">
-          <a className="navbar-brand" href="#page-top">
-            <img
-              src="/img/logo.png"
-              alt="logo"
-              style={{ height: "60px", width: "auto" }}
-            />
-          </a>
-          <button
-            type="button"
-            className="navbar-toggle block lg:hidden ml-3"
-            aria-label="Toggle navigation"
-            data-toggle="collapse"
-            data-target="#navbar-menu"
-          >
-            <span className="sr-only">Toggle navigation</span>
-            <span className="icon-bar block w-6 h-0.5 bg-black mb-1"></span>
-            <span className="icon-bar block w-6 h-0.5 bg-black mb-1"></span>
-            <span className="icon-bar block w-6 h-0.5 bg-black"></span>
-          </button>
+    <nav className="bg-white shadow-md p-4 fixed top-0 left-0 w-full z-50">
+      <div className="container mx-auto flex justify-between items-center">
+        <div className="text-xl font-bold">
+          <IKImage path="logo_dg.svg" />
         </div>
 
-        <div className="lg:flex hidden">
-          <ul className="flex space-x-6">
-            <li>
-              <a href="#features" className="text-black hover:text-gray-500 transition-colors">
-                Features
-              </a>
-            </li>
-            <li>
-              <a href="#about" className="text-black hover:text-gray-500 transition-colors">
-                About
-              </a>
-            </li>
-            <li>
-              <a href="#services" className="text-black hover:text-gray-500 transition-colors">
-                Services
-              </a>
-            </li>
-            <li>
-              <a href="#portfolio" className="text-black hover:text-gray-500 transition-colors">
-                Gallery
-              </a>
-            </li>
-            <li>
-              <a href="#testimonials" className="text-black hover:text-gray-500 transition-colors">
-                Testimonials
-              </a>
-            </li>
-            <li>
-              <a href="#team" className="text-black hover:text-gray-500 transition-colors">
-                Team
-              </a>
-            </li>
-            <li>
-              <a href="#contact" className="text-black hover:text-gray-500 transition-colors">
-                Contact
-              </a>
-            </li>
-          </ul>
-        </div>
+        <ul className="hidden md:flex space-x-6 text-gray-700 font-medium">
+          <li>
+            <a href="#services" className="hover:text-blue-500">
+              Servicios
+            </a>
+          </li>
+          <li>
+            <a href="#pricing" className="hover:text-blue-500">
+              Precios
+            </a>
+          </li>
+          <li>
+            <a href="#location" className="hover:text-blue-500">
+              Donde Estamos
+            </a>
+          </li>
+          <li>
+            <a href="#contact" className="hover:text-blue-500">
+              Contacto
+            </a>
+          </li>
+        </ul>
+
+        <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+          <Menu className="h-6 w-6 text-gray-700" />
+        </button>
       </div>
+
+      {isOpen && (
+        <ul className="md:hidden bg-white shadow-md rounded-lg mt-2 p-4 space-y-4">
+          <li>
+            <a
+              href="#services"
+              className="block text-gray-700 hover:text-blue-500"
+            >
+              Servicios
+            </a>
+          </li>
+          <li>
+            <a
+              href="#pricing"
+              className="block text-gray-700 hover:text-blue-500"
+            >
+              Precios
+            </a>
+          </li>
+          <li>
+            <a href="#location" className="block text-gray-700 hover:text-blue-500">
+              Donde Estamos
+            </a>
+          </li>
+          <li>
+            <a
+              href="#contact"
+              className="block text-gray-700 hover:text-blue-500"
+            >
+              Contacto
+            </a>
+          </li>
+        </ul>
+      )}
     </nav>
   );
 };
