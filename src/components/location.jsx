@@ -15,7 +15,10 @@ const customIcon = new L.Icon({
 
 export const Location = () => {
   return (
-    <div className="flex flex-col h-auto md:flex-row justify-center p-16 bg-white shadow-md rounded-xl">
+    <div
+      id="location"
+      className="flex flex-col h-auto md:flex-row justify-center p-16 bg-white"
+    >
       <div className="w-full md:w-1/2">
         <MapContainer
           center={position}
@@ -29,16 +32,13 @@ export const Location = () => {
             ext="png"
           />
           <Marker position={position} icon={customIcon}>
-            <Popup open>📍 Calle Santa Adela, Peligros, Granada</Popup>
+            <Popup>Calle Santa Adela, Peligros, Granada</Popup>
           </Marker>
         </MapContainer>
       </div>
 
       <div className="w-full md:w-[30%] md:pl-10 mt-6 md:mt-0 md:h-full">
-        <h2 className="text-3xl font-bold text-gray-800 mb-8 relative inline-block">
-          DONDE ESTAMOS
-          <span className="block w-30 h-0.5 bg-blue-500 absolute -bottom-1 left-0"></span>
-        </h2>
+        <h2 className="text-3xl font-bold text-gray-800 mb-8">DONDE ESTAMOS</h2>
         <p className="text-gray-600 leading-relaxed">
           Los garajes de nueva construcción se encuentran en la{" "}
           <b>Calle Santa Adela</b>, en el municipio de <b>Peligros</b>, dentro
@@ -51,7 +51,7 @@ export const Location = () => {
         </p>
         <p className="text-gray-600 leading-relaxed mt-4">
           ¡Ven a visitarnos y descubre todas las ventajas de nuestros garajes de
-          obra nueva! 🚗🔑
+          obra nueva!
         </p>
       </div>
     </div>

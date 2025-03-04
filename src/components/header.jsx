@@ -2,7 +2,7 @@ import { IKImage } from "imagekitio-react";
 
 export const Header = () => {
   return (
-    <header className="relative h-screen flex items-center justify-center text-white">
+    <header className="relative h-screen flex items-center justify-center text-[#F9FAFB]">
       <IKImage
         path="parking1.jpg"
         className="absolute w-full h-full object-cover"
@@ -19,7 +19,7 @@ export const Header = () => {
         </p>
         <a
           href="#services"
-          className="mt-6 inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg text-lg transition"
+          className="mt-6 inline-block bg-[#1E3A8A] hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg text-lg transition"
         >
           Más información
         </a>
