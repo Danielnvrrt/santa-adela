@@ -1,31 +1,10 @@
 @import "tailwindcss";
 
-
-@media screen and (max-width: 400px) {
-  #features {
-    padding: 20px;
-    width: 111%;
-  }
-  #about,
-  #services,
-  #testimonials,
-  #team,
-  #contact,
-  #footer {
-    width: 111%;
-  }
-
-  #portfolio {
-    width: 110%;
-  }
-}
-
 @theme {
   --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
   --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
 }
 
-/* Definir la animación en CSS */
 @keyframes underline {
   from {
     width: 0;
@@ -35,7 +14,6 @@
   }
 }
 
-/* Aplicar la animación como una utilidad */
 .underline-animation {
   position: relative;
 }
@@ -47,6 +25,6 @@
   bottom: -7px;
   height: 2px;
   width: 0;
-  background-color: rgb(59, 130, 246); /* azul de Tailwind */
+  background: #1F2937;
   animation: underline 1s ease-out forwards;
 }

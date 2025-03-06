@@ -66,7 +66,7 @@ export const ContactForm = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full md:w-1/2 p-3 rounded-lg bg-white text-gray-800 placeholder-gray-500 outline-none"
+              className="w-full md:w-1/2 p-3 rounded-lg bg-white text-gray-800 placeholder-gray-500 outline-none my-1"
             />
             <input
               type="email"
@@ -75,7 +75,7 @@ export const ContactForm = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full md:w-1/2 p-3 rounded-lg bg-white text-gray-800 placeholder-gray-500 outline-none"
+              className="w-full md:w-1/2 p-3 rounded-lg bg-white text-gray-800 placeholder-gray-500 outline-none my-1"
             />
             <input
               type="tel"
@@ -83,7 +83,7 @@ export const ContactForm = () => {
               placeholder="Teléfono"
               value={formData.phone}
               onChange={handleChange}
-              className="w-full md:w-1/2 p-3 rounded-lg bg-white text-gray-800 placeholder-gray-500 outline-none"
+              className="w-full md:w-1/2 p-3 rounded-lg bg-white text-gray-800 placeholder-gray-500 outline-none my-1"
             />
           </div>
 

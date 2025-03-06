@@ -2,9 +2,12 @@ import { IKImage } from "imagekitio-react";
 
 export const Header = () => {
   return (
-    <header className="relative h-screen flex items-center justify-center text-[#F9FAFB]">
+    <header
+      id="header"
+      className="relative h-screen flex items-center justify-center text-[#F9FAFB]"
+    >
       <IKImage
-        path="parking1.jpg"
+        path="parking.jpg"
         className="absolute w-full h-full object-cover"
         alt="Background"
       />
