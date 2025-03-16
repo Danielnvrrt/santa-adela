@@ -116,7 +116,7 @@ export const ContactForm = () => {
             <div>
               <p className="font-semibold">Dirección</p>
               <p className="text-white/80">
-                Calle Santa Adela, Peligros, Granada
+                Calle Santa Adela 28, Peligros, Granada
               </p>
             </div>
           </div>
@@ -125,7 +125,7 @@ export const ContactForm = () => {
             <Phone className="w-6 h-6" />
             <div>
               <p className="font-semibold">Teléfono</p>
-              <p className="text-white/80">+34 666 666 666</p>
+              <p className="text-white/80">+34 633 80 73 09</p>
             </div>
           </div>
 
@@ -133,7 +133,7 @@ export const ContactForm = () => {
             <Mail className="w-6 h-6" />
             <div>
               <p className="font-semibold">Email</p>
-              <p className="text-white/80">info@company.com</p>
+              <p className="text-white/80">parkingsantaadela@gmail.com</p>
             </div>
           </div>
         </div>
