@@ -108,7 +108,7 @@ export const ContactForm = () => {
       </div>
 
       <div className="w-full md:w-1/3 mt-8 md:mt-0">
-        <h3 className="text-xl font-bold mb-4">Contact Info</h3>
+        <h3 className="text-xl font-bold mb-4">Información de Contacto</h3>
 
         <div className="space-y-4">
           <div className="flex items-center space-x-3">
