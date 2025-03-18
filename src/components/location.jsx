@@ -17,7 +17,7 @@ export const Location = () => {
   return (
     <div
       id="location"
-      className="flex flex-col h-auto lg:flex-row justify-center p-16 bg-white"
+      className="flex flex-col h-auto lg:flex-row justify-center p-16 bg-slate-200"
     >
       <div className="w-full lg:w-1/2">
         <MapContainer

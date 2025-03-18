@@ -1,18 +1,25 @@
-import { useState, useEffect } from "react";
-import { Menu } from "lucide-react";
-import { IKImage } from "imagekitio-react";
+import { useState, useEffect } from 'react';
+import { Menu } from 'lucide-react';
+import { IKImage } from 'imagekitio-react';
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
+  const [activeSection, setActiveSection] = useState('');
+
+  const sections = [
+    { id: 'services', label: 'SERVICIOS' },
+    { id: 'gallery', label: 'GALERÍA' },
+    { id: 'location', label: 'DONDE ESTAMOS' },
+    { id: 'contact', label: 'CONTACTO' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["services", "location", "contact"];
-      let currentSection = "";
+      // const sects = ['services', 'gallery', 'location', 'contact'];
+      let currentSection = '';
 
       sections.forEach((section) => {
-        const el = document.getElementById(section);
+        const el = document.getElementById(section.id);
         if (el) {
           const rect = el.getBoundingClientRect();
           const viewportHeight = window.innerHeight;
@@ -21,7 +28,7 @@ export const Navigation = () => {
             rect.top < viewportHeight * 0.5 &&
             rect.bottom > viewportHeight * 0.2
           ) {
-            currentSection = section;
+            currentSection = section.id;
           }
         }
       });
@@ -29,12 +36,12 @@ export const Navigation = () => {
       setActiveSection(currentSection);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     handleScroll();
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -50,16 +57,12 @@ export const Navigation = () => {
         </a>
 
         <ul className="hidden md:flex space-x-6 font-medium">
-          {[
-            { id: "services", label: "SERVICIOS" },
-            { id: "location", label: "DONDE ESTAMOS" },
-            { id: "contact", label: "CONTACTO" },
-          ].map(({ id, label }) => (
+          {sections.map(({ id, label }) => (
             <li key={id} className="relative">
               <a
                 href={`#${id}`}
                 className={`navbar-nav hover:text-blue-500 ${
-                  activeSection === id ? "underline-animation" : ""
+                  activeSection === id ? 'underline-animation' : ''
                 }`}
               >
                 {label}
@@ -76,16 +79,16 @@ export const Navigation = () => {
       {isOpen && (
         <ul className="md:hidden bg-white mt-2 p-4 space-y-4">
           {[
-            { id: "services", label: "SERVICIOS" },
-            { id: "location", label: "DONDE ESTAMOS" },
-            { id: "contact", label: "CONTACTO" },
+            { id: 'services', label: 'SERVICIOS' },
+            { id: 'location', label: 'DONDE ESTAMOS' },
+            { id: 'contact', label: 'CONTACTO' },
           ].map(({ id, label }) => (
             <li key={id}>
               <a
                 href={`#${id}`}
                 className="block text-gray-700 hover:text-blue-500 relative after:block after:h-[3px] after:bg-blue-500 after:w-0 after:transition-all after:duration-300"
                 style={{
-                  color: activeSection === id ? "black" : "",
+                  color: activeSection === id ? 'black' : '',
                 }}
                 onClick={() => setIsOpen(false)}
               >
