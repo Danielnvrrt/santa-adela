@@ -1,8 +1,8 @@
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 
-const position = [37.23243, -3.62829];
+const position = [37.23246, -3.62823];
 
 // Icono personalizado para el marcador
 const customIcon = new L.Icon({
@@ -26,14 +26,23 @@ export const Location = () => {
           className="h-96 w-full rounded-xl shadow-lg"
         >
           <TileLayer
-            url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+            url="http://{s}.google.com/vt?lyrs=m&x={x}&y={y}&z={z}"
             minZoom={14}
             maxZoom={20}
-            ext="png"
+            subdomains={['mt0', 'mt1', 'mt2', 'mt3']}
           />
-          <Marker position={position} icon={customIcon}>
-            <Popup>Calle Santa Adela, Peligros, Granada</Popup>
-          </Marker>
+          <Marker
+            position={position}
+            icon={customIcon}
+            eventHandlers={{
+              click: () => {
+                window.open(
+                  'https://maps.app.goo.gl/9yWhUCg85d3wtK8f9',
+                  '_blank'
+                );
+              },
+            }}
+          />
         </MapContainer>
       </div>
 
@@ -41,7 +50,7 @@ export const Location = () => {
         <h2 className="text-3xl font-bold text-gray-800 mb-8">DONDE ESTAMOS</h2>
         <p className="text-gray-600 leading-relaxed">
           Los garajes de nueva construcción se encuentran en la{' '}
-          <b>Calle Santa Adela 28</b>, en el municipio de <b>Peligros</b>, dentro
+          <b>Calle Santa Adela 30</b>, en el municipio de <b>Peligros</b>, dentro
           de la provincia de <b>Granada</b>.
         </p>
         <p className="text-gray-600 leading-relaxed mt-4">
@@ -55,7 +64,7 @@ export const Location = () => {
         </p>
         <button
           onClick={() =>
-            window.open('https://maps.app.goo.gl/WT1Y2u7iHbmwRGix6', '_blank')
+            window.open('https://maps.app.goo.gl/9yWhUCg85d3wtK8f9', '_blank')
           }
           className="mt-6 px-4 py-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 cursor-pointer"
         >

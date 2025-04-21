@@ -116,7 +116,7 @@ export const ContactForm = () => {
             <div>
               <p className="font-semibold">Dirección</p>
               <p className="text-white/80">
-                Calle Santa Adela 28, Peligros, Granada
+                Calle Santa Adela 30, Peligros, Granada
               </p>
             </div>
           </div>

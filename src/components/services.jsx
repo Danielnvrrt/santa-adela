@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FaCar, FaMotorcycle, FaBox } from 'react-icons/fa';
 
 const services = [
@@ -26,6 +26,22 @@ const services = [
 ];
 
 export const Services = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const handleClick = (index) => {
+    if (isMobile) {
+      setActiveIndex(activeIndex === index ? null : index);
+    }
+  };
+
   return (
     <section id="services" className="py-16 bg-gray-100">
       <div className="max-w-6xl mx-auto text-center px-6">
@@ -41,7 +57,9 @@ export const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white border border-gray-300 p-6 rounded-2xl shadow-lg flex flex-col items-center max-w-sm mx-auto transition-transform duration-300 cursor-pointer hover:scale-110"
+              className={`bg-white border border-gray-300 p-6 rounded-2xl shadow-lg flex flex-col items-center max-w-sm mx-auto transition-transform duration-300 cursor-pointer 
+              ${isMobile ? (activeIndex === index ? 'scale-110' : '') : 'hover:scale-110'}`}
+              onClick={() => handleClick(index)}
             >
               <div className="bg-[#1F2937] p-4 rounded-full mb-4">
                 {service.icon}
