@@ -50,9 +50,9 @@ export const Navigation = () => {
       data-scroll-header
       className="bg-white shadow-md p-4 fixed top-0 left-0 w-full z-[10000]"
     >
-      <div className="container mx-auto flex justify-between items-center">
+      <div className="flex justify-between items-center">
         <a href="#header" className="cursor-pointer">
-          <IKImage path="logo.png" width={60} height={55} />
+          <IKImage path="logoNav.webp" width={250} />
         </a>
 
         <ul className="hidden md:flex space-x-6 font-medium">
