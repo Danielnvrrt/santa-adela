@@ -48,7 +48,7 @@ export const Navigation = () => {
     <nav
       id="navigation"
       data-scroll-header
-      className="bg-white shadow-md p-4 fixed top-0 left-0 w-full z-[10000]"
+      className="bg-white p-4 fixed top-0 left-0 w-full z-[10000]"
     >
       <div className="flex justify-between items-center">
         <a href="#header" className="cursor-pointer">
