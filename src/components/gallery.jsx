@@ -1,6 +1,6 @@
 import { CustomSlider } from './slider';
 
-const images = ['inicio/1.jpg', 'inicio/2.jpg', 'inicio/3.jpg', 'inicio/4.jpg', 'inicio/5.jpg', 'inicio/6.jpg', 'inicio/1.mp4'];
+const images = ['inicio/1.jpg', 'inicio/2.jpg', 'inicio/3.jpg', 'inicio/4.jpg', 'inicio/5.jpg', 'inicio/1.mp4', 'inicio/6.jpg'];
 
 export const Gallery = () => {
   return (
