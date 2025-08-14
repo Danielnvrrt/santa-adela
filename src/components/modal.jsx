@@ -30,22 +30,28 @@ export const Modal = ({ isOpen, onRequestClose, children }) => {
           alignItems: 'center',
           justifyContent: 'center',
           zIndex: 10000,
+          cursor: 'pointer',
         },
         content: {
           position: 'relative',
           width: 'auto',
           height: 'auto',
           maxWidth: '90%',
-          maxHeight: '90%',
+          maxHeight: '95%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
           border: 'none',
+          overflow: 'hidden',
           background: 'transparent',
           inset: 0,
+          cursor: 'default',
         },
       }}
     >
       <button
         onClick={onRequestClose}
-        className="absolute top-6 right-6 bg-white rounded-full p-2 shadow-lg"
+        className="absolute top-6 right-6 bg-white rounded-full p-2 shadow-lg cursor-pointer"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

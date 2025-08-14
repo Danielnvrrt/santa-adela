@@ -8,7 +8,7 @@ export const Navigation = () => {
 
   const sections = [
     { id: 'services', label: 'SERVICIOS' },
-    // { id: 'gallery', label: 'GALERÍA' },
+    { id: 'gallery', label: 'GALERÍA' },
     { id: 'location', label: 'DONDE ESTAMOS' },
     { id: 'contact', label: 'CONTACTO' },
   ];
@@ -79,7 +79,7 @@ export const Navigation = () => {
         <ul className="md:hidden bg-white mt-2 p-4 space-y-4">
           {[
             { id: 'services', label: 'SERVICIOS' },
-            // { id: 'gallery', label: 'GALERÍA' },
+            { id: 'gallery', label: 'GALERÍA' },
             { id: 'location', label: 'DONDE ESTAMOS' },
             { id: 'contact', label: 'CONTACTO' },
           ].map(({ id, label }) => (

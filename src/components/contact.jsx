@@ -1,15 +1,15 @@
-import { useState } from "react";
-import emailjs from "@emailjs/browser";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { useState } from 'react';
+import emailjs from '@emailjs/browser';
+import { Mail, MapPin, Phone } from 'lucide-react';
 
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-    phone: "",
+    name: '',
+    email: '',
+    message: '',
+    phone: '',
   });
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,7 +20,7 @@ export const ContactForm = () => {
   const sendEmail = async (e) => {
     e.preventDefault();
 
-    setStatus("Enviando...");
+    setStatus('Enviando...');
 
     try {
       await emailjs.send(
@@ -29,16 +29,16 @@ export const ContactForm = () => {
         formData,
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
-      
-      setStatus("Mensaje enviado con éxito");
-      setFormData({ name: "", email: "", message: "", phone: "" });
 
-      setTimeout(() => setStatus(""), 5000);
+      setStatus('Mensaje enviado con éxito');
+      setFormData({ name: '', email: '', message: '', phone: '' });
+
+      setTimeout(() => setStatus(''), 5000);
     } catch (error) {
       console.log(error);
-      setStatus("Error al enviar el mensaje, inténtalo de nuevo.");
+      setStatus('Error al enviar el mensaje, inténtalo de nuevo.');
 
-      setTimeout(() => setStatus(""), 5000);
+      setTimeout(() => setStatus(''), 5000);
     }
   };
 
@@ -53,8 +53,10 @@ export const ContactForm = () => {
         </h2>
 
         <p className="text-white/80 mb-6">
-          Envía un mensaje con tu opción deseada y nos pondremos en contacto lo
-          antes posible.
+          Para más información, llama al teléfono indicado más abajo, envía un
+          mensaje por Whatsapp o, si lo prefieres, escríbenos en el formulario
+          de contacto. Nos pondremos en contacto lo antes posible, siempre en
+          horario de tarde.
         </p>
 
         <form onSubmit={sendEmail} className="space-y-4">

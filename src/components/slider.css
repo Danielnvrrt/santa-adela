@@ -4,3 +4,13 @@
   font-size: 30px !important;
   padding: 10px;
 }
+
+.slick-prev {
+  left: -40px !important; /* ajusta a gusto */
+  z-index: 2;
+}
+
+.slick-next {
+  right: -20px !important; /* el mismo valor que slick-prev pero a la derecha */
+  z-index: 2;
+}

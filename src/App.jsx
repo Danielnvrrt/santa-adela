@@ -28,7 +28,7 @@ const App = () => {
       <Navigation />
       <Header />
       <Services />
-      {/* <Gallery /> */}
+      <Gallery />
       <Location />
       <ContactForm />
     </IKContext>
