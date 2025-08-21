@@ -4,6 +4,8 @@ import './slider.css';
 const images = [
   'trasteros/1.jpg',
   'trasteros/2.jpg',
+  'trasteros/3.mp4',
+  'trasteros/2.mp4',
   'trasteros/3.jpg',
 ];
 

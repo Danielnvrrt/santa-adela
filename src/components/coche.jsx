@@ -13,9 +13,7 @@ export const Coche = () => {
         <p className="mb-8 text-lg md:text-xl max-w-3xl mx-auto text-gray-800 leading-relaxed md:text-center md:px-16">
           Amplias plazas diseñadas para automóviles de todo tipo de medidas que
           permiten realizar maniobras seguras, así como estacionar el vehículo
-          sin grandes dificultades. Cada plaza dispone de una taquilla
-          individual con cerradura para garantizar una mayor comodidad al
-          cliente.
+          sin grandes dificultades.
         </p>
       </div>
       <div className="flex justify-center items-center">
