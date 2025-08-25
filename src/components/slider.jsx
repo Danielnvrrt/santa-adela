@@ -10,6 +10,8 @@ export const CustomSlider = ({ images }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedSlide, setSelectedSlide] = useState(0);
 
+  const IMAGEKIT_ENDPOINT = 'https://ik.imagekit.io/jlms4iyhtv/';
+
   const openModal = (index) => {
     setSelectedSlide(index);
     setIsModalOpen(true);
@@ -33,6 +35,8 @@ export const CustomSlider = ({ images }) => {
         settings: {
           slidesToShow: 1,
           centerPadding: '0px',
+          arrows: false,
+          dots: true,
         },
       },
     ],
@@ -50,17 +54,20 @@ export const CustomSlider = ({ images }) => {
                 }`}
               >
                 {image.endsWith('.jpg') ? (
-                  <IKImage
-                    path={image}
-                    className="rounded-lg shadow-lg w-full h-auto"
+                  <img
+                    src={IMAGEKIT_ENDPOINT + image}
+                    alt={`slide-${index}`}
+                    className="rounded-lg shadow-lg w-full h-auto cursor-pointer"
                     onClick={() => openModal(index)}
+                    loading="lazy"
                   />
                 ) : (
-                  <IKVideo
-                    path={image}
+                  <video
+                    src={IMAGEKIT_ENDPOINT + image}
                     muted
                     autoPlay
                     loop
+                    loading="lazy"
                     className="rounded-lg shadow-lg w-full h-auto"
                     onClick={() => openModal(index)}
                   />
