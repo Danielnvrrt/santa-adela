@@ -5,6 +5,7 @@ import { IKImage } from 'imagekitio-react';
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const sections = [
     { id: 'services', label: 'SERVICIOS' },
@@ -15,6 +16,12 @@ export const Navigation = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+
       let currentSection = '';
 
       sections.forEach((section) => {
@@ -48,32 +55,38 @@ export const Navigation = () => {
     <nav
       id="navigation"
       data-scroll-header
-      className="bg-white p-4 fixed top-0 left-0 w-full z-[10000]"
+      className={`p-4 fixed top-0 left-0 w-full z-[10000] transition-all duration-300 ${
+        isScrolled || isOpen
+          ? 'bg-white shadow-md py-3'
+          : 'bg-transparent py-5 text-white'
+      }`}
     >
-      <div className="flex justify-between items-center">
-        <a href="#header" className="cursor-pointer">
-          <IKImage path="logoNav.webp" width={250} />
-        </a>
+      {isScrolled && (
+        <div className="flex justify-between items-center">
+          <a href="#header" className="cursor-pointer">
+            <IKImage path="logoNav.webp" width={250} />
+          </a>
 
-        <ul className="hidden md:flex space-x-6 font-medium">
-          {sections.map(({ id, label }) => (
-            <li key={id} className="relative">
-              <a
-                href={`#${id}`}
-                className={`navbar-nav hover:text-blue-500 ${
-                  activeSection === id ? 'underline-animation' : ''
-                }`}
-              >
-                {label}
-              </a>
-            </li>
-          ))}
-        </ul>
+          <ul className="hidden md:flex space-x-6 font-medium">
+            {sections.map(({ id, label }) => (
+              <li key={id} className="relative">
+                <a
+                  href={`#${id}`}
+                  className={`navbar-nav ${
+                    activeSection === id ? 'underline-animation' : ''
+                  }`}
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
 
-        <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
-          <Menu className="h-6 w-6 text-gray-700" />
-        </button>
-      </div>
+          <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+            <Menu className="h-6 w-6 text-gray-700" />
+          </button>
+        </div>
+      )}
 
       {isOpen && (
         <ul className="md:hidden bg-white mt-2 p-4 space-y-4">

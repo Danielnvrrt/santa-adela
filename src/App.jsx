@@ -1,4 +1,3 @@
-import React, { useState, useEffect, useRef } from 'react';
 import SmoothScroll from 'smooth-scroll';
 import { Header } from './components/header';
 import './App.css';

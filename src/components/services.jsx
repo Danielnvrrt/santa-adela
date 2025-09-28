@@ -50,7 +50,7 @@ export const Services = () => {
   };
 
   return (
-    <section id="services" className="py-16 bg-gray-100">
+    <section id="services" className="py-16 bg-gray-100 z-10">
       <div className="max-w-6xl mx-auto text-center px-6">
         <h2 className="text-3xl font-bold text-gray-800 mb-4">SERVICIOS</h2>
         <p className="mb-8 text-lg md:text-xl max-w-3xl mx-auto text-gray-800 leading-relaxed md:text-center md:px-16">
