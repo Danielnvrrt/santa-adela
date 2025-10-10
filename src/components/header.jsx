@@ -18,15 +18,10 @@ export const Header = () => {
     <header id="header" className="relative w-screen h-screen">
       <div className="fixed inset-0 -z-10">
         <video
-          src={
-            !isPortrait
-              ? '/videos/horizontal.mp4'
-              : '/videos/vertical.mp4'
-          }
+          src={!isPortrait ? '/videos/horizontal.mp4' : '/videos/vertical.mp4'}
           className="object-cover w-full h-full"
           autoPlay
           muted
-          loop
           preload="auto"
         />
       </div>
