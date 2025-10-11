@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Video, buildSrc } from '@imagekit/react';
 
 export const Header = () => {
   const [isPortrait, setIsPortrait] = useState(false);
@@ -14,15 +15,26 @@ export const Header = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const videoSrc = !isPortrait
+    ? '/horizontal_compressed.mp4'
+    : '/vertical_compressed.mp4';
+  const posterSrc = buildSrc({
+    urlEndpoint: 'https://ik.imagekit.io/jlms4iyhtv',
+    src: !isPortrait
+      ? 'horizontal_compressed.mp4/ik-thumbnail.jpg'
+      : 'vertical_compressed.mp4/ik-thumbnail.jpg',
+  });
+
   return (
     <header id="header" className="relative w-screen h-screen">
       <div className="fixed inset-0 -z-10">
-        <video
-          src={!isPortrait ? '/videos/horizontal.mp4' : '/videos/vertical.mp4'}
-          className="object-cover w-full h-full"
+        <Video
+          urlEndpoint="https://ik.imagekit.io/jlms4iyhtv"
+          src={videoSrc}
           autoPlay
           muted
-          preload="auto"
+          poster={posterSrc}
+          playsInline
         />
       </div>
     </header>
